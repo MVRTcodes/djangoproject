@@ -12,9 +12,17 @@ def hello(request, username):
 def about(request):
     return render(request, 'about.html')
 
-def projects(request):
+def projectsapi(request):
     p = list(Project.objects.values())
     return JsonResponse(p, safe=False)
+
+def projects(request):
+    p = Project.objects.all()
+    t = Task.objects.all()
+    return render(request, 'projects.html', {
+        'projects': p,
+        'tasks' : t
+    })
 
 def tasks(request, id):
     t = get_object_or_404(Task, id=id)
