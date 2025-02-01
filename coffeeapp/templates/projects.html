@@ -1,3 +1,7 @@
+{% extends 'layouts/header.html' %}
+
+{% block content %}
+
 <h1>Projects</h1>
 
 {% for project in projects %}
@@ -10,9 +14,11 @@
     <h3>Tasks: </h3>
     {%for task in tasks %}
     {%if task.project_id == project.id%}
-    <p>- {{task.title}}</p>
+    <p>- {{task.title}} - {%if task.done %} Completada {% else %} Pendiente {% endif %}</p>
     {% endif %}
     {% endfor %}
 </div>
 
 {% endfor %}
+
+{% endblock %}
