@@ -29,3 +29,6 @@ def tasks(request, id):
     return render(request, 'tasks.html', {
         'task':t.title
     })
+
+def create_task(request):
+    return render(request, 'create_task.html')
