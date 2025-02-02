@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse, JsonResponse
 from .models import Project, Task
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
+from .forms import CreateTaskForm
 # Create your views here.
 
 def index(request):
@@ -31,4 +32,18 @@ def tasks(request, id):
     })
 
 def create_task(request):
-    return render(request, 'create_task.html')
+    
+    if request.method == 'POST':
+        form = CreateTaskForm(request.POST)
+        if form.is_valid():
+            Task.objects.create(
+                    title=form.cleaned_data['title'],
+                    description=form.cleaned_data['description'],
+                    project=form.cleaned_data['project']
+                )
+            return redirect('/projects/')
+    else:
+        return render(request, 'create_task.html',{
+            'form': CreateTaskForm
+        })
+        #return redirect('/projects')
