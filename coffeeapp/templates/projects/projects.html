@@ -1,0 +1,26 @@
+{% extends 'layouts/header.html' %}
+
+{% block content %}
+
+<h1>Projects</h1>
+
+{% for project in projects %}
+<div class="dprojects">
+    <div>
+        <h2>{{project.name}}</h2>
+    </div>
+
+    <div class="dtasks">
+        <h3>Tasks: </h3>
+        <ul>
+        {%for task in tasks %}
+        {%if task.project_id == project.id%}
+        <li><a href="/tasks/{{task.id}}">{{task.title}} - {%if task.done %} Completada {% else %} Pendiente {% endif %}
+        </li></a>
+        {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

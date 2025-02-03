@@ -1,0 +1,44 @@
+body{
+    background: #202020;
+    color: whitesmoke;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-bar {
+    background-color: #404040;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    list-style: none;
+
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar ul li a:hover {
+    color:aquamarine;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color:aquamarine;
+}
+
+.dprojects{
+    background-color: #404040;
+    padding: 10px 20px;
+    display: block;
+    margin: 10px 0px;
+
+}
