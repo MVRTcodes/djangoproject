@@ -15,7 +15,7 @@
         <ul>
         {%for task in tasks %}
         {%if task.project_id == project.id%}
-        <li><a href="/tasks/{{task.id}}">{{task.title}} - {%if task.done %} Completada {% else %} Pendiente {% endif %}
+        <li><a href="/tasks/{{task.id}}">{{task.title}} - {%if task.done %} Completed {% else %} Pending {% endif %}
         </li></a>
         {% endif %}
         {% endfor %}

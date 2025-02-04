@@ -5,5 +5,5 @@
 <h1> Task: {{task.title}} - {%if task.done %} Completada {% else %} Pendiente {% endif %}</h1>
 <p>Descripcion: {{task.description}}</p>
 
-<button>{%if task.done %} Desmarcar como completada {% else %} Marcar como completada {% endif %}</button>
+<button>{%if task.done %} Unmark as completed {% else %} Mark as completed {% endif %}</button>
 {% endblock %}
