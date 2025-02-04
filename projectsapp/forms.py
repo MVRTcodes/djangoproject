@@ -6,7 +6,7 @@ class CreateProjectForm(forms.Form):
 
 class CreateTaskForm(forms.Form):
     title = forms.CharField(label ="Task name", max_length=200)
-    description = forms.CharField(label = "Text Area", widget=forms.Textarea)
+    description = forms.CharField(label = "Task Description", widget=forms.Textarea)
     project = forms.ModelChoiceField(
         queryset=Project.objects.all(), 
         empty_label="Select a Project",

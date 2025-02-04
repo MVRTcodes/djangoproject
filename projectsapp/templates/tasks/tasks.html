@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1> Task: {{task.title}} - {%if task.done %} Completada {% else %} Pendiente {% endif %}</h1>
+<h1> Task: {{task.title}} - {%if task.done %} Completed {% else %} Pending {% endif %}</h1>
 <p>Descripcion: {{task.description}}</p>
 
 <button>{%if task.done %} Unmark as completed {% else %} Mark as completed {% endif %}</button>
